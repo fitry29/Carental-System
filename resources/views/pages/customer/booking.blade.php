@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col d-md-flex align-items-start justify-content-center">
-            <div class="col-10 col-md-3 gap-2 ">
+            <div class=" container col-10 col-md-3 gap-2 " id="rental-info-box">
                 <div class="col-12 p-4 border shadow rounded-4 mt-4">
                     <div class="fs-4 fw-bold">Date Checker</div>
                     <form class="row align-items-end" action="{{ route('rentals.search-available-car') }}" method="get">
@@ -21,7 +21,7 @@
                     </form>
                 </div>
                 <div class="col-12 p-4 border shadow rounded-4 mt-4 gap-3">
-                    <div class="fs-4 fw-bold">Rental Information</div>
+                    <div class="fs-4 fw-bold"  >Rental Information</div>
                     <form action="{{ route('rentals.store') }}" method="post">
                         @csrf
                         
@@ -82,7 +82,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $c->brand }} {{ $c->model }} {{ $c->year }}</h5>
                                 <p class="card-text fs-5">{{ $c->category->name }} | RM{{ $c->rental_price }}</p>
-                                <a href="#" class="btn btn-dark rounded-4 fs-6 col-12 select-car-btn text-light" 
+                                <a href="#rental-info-box" class="btn btn-dark rounded-4 fs-6 col-12 select-car-btn text-light" 
                                     data-id= "{{ $c->id }}"
                                     data-brand= "{{ $c->brand }}"
                                     data-model= "{{ $c->model }}"
@@ -151,7 +151,7 @@
 
     document.querySelectorAll('.select-car-btn').forEach(button => {
         button.addEventListener('click', function (e){
-            e.preventDefault();
+            // e.preventDefault();
             
             // ambil semua data dari butang
             const car = {
