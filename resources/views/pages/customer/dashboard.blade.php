@@ -178,11 +178,11 @@
     </div>
     <div class="container col-10 col-md-12 border border-dark d-flex justify-content-between align-items-center p-4 mb-4 rounded-4" id="contact" style="min-height: 10vh;">
         <div class="row p-4">
-            <div class="col"><a class="nav-link" href="#"> Help </a></div>
-            <div class="col"><a class="nav-link" href="#"> Contact </a></div>
+            <div class="col"><a class="nav-link" href="https://github.com/fitry29" target="_blank"> Help </a></div>
+            <div class="col"><a class="nav-link" href="https://github.com/fitry29" target="_blank"> Contact </a></div>
         </div>
         <div class="row p-4">
-            <div class="col">2025 made with by <a href="#">Fitry</a></div>
+            <div class="col">2025 made with by <a href="https://github.com/fitry29" target="_blank">Fitry</a></div>
         </div>
     </div>
 
