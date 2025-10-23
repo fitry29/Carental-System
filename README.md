@@ -16,3 +16,25 @@ This project is suitable for learning **Laravel CRUD, Authentication, and Admin 
 - **Version Control:** Git & GitHub  
 
 ---
+
+## 🖼️ Features
+- ✅ User authentication (login & register)
+- ✅ Car listing with details & pricing
+- ✅ Booking system with date & total price
+- ✅ Admin dashboard (manage cars, users, bookings)
+- ✅ Booking history & status
+- ✅ Payment tracking
+- ✅ Responsive UI using Bootstrap
+
+---
+
+## 👨‍💻 Default Admin Account
+
+- Email: admin@system.com
+- Password: password123
+
+## 🧾 License
+This project is open source under the **MIT License**.
+
+---
+
