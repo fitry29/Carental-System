@@ -5,6 +5,7 @@ use App\Http\Controllers\RentalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\PaymentController;
 use App\Models\Maintenance;
@@ -20,23 +21,25 @@ use App\Models\Maintenance;
 |
 */
     Route::middleware(['role.redirect'])->group(function(){
-        Route::get('/', [UserController::class, 'showRegisterForm'])->name('register');
+        Route::get('/register', [UserController::class, 'showRegisterForm'])->name('register');
         Route::post('register', [UserController::class, 'register'])->name('register.submit');
 
         Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
         Route::post('/login', [UserController::class, 'login']);
     });
 
-    Route::get('/dashboard', [CarController::class, 'dashboard'])->name('customer.dashboard');
+    Route::get('/', [CarController::class, 'dashboard'])->name('customer.dashboard');
 
     // Route::post('/booking', [RentalController::class, 'searchAvailableCars'])->name('customer.booking');
 
     Route::middleware(['auth'])->group(function(){
 
         //Dashboard
-        Route::get('/admin', function () {
-            return view('pages.admin.dashboard');
-        })->name('dashboard');
+        // Route::get('/admin', function () {
+        //     return view('pages.admin.dashboard');
+        // })->name('dashboard');
+
+        Route::get('/admin',[DashboardController::class, 'dashboardIndex'])->name('dashboard');
 
         //For User
         Route::get('/user',[UserController::class, 'index'])->name('users.index'); //Go to list category

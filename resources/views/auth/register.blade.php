@@ -57,6 +57,14 @@
                     input.type = this.checked ? 'text' : 'password';
                     });
                 </script>
+                    <!-- Untuk Phone auto masuk +60 -->
+                <script>
+                document.getElementById('phone').addEventListener('blur', function() {
+                    if (!this.value.startsWith('+60')) {
+                        this.value = '+60' + this.value.replace(/^0/, ''); 
+                    }
+                });
+                </script>
         </div>
     </body>
 </html>

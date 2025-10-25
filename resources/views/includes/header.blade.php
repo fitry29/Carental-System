@@ -47,29 +47,6 @@
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
                         <li>
-                            <div class="user-box">
-                                <div class="avatar-lg">
-                                    <!-- @if (auth()->user()->image_path == "")
-                                        <img src="{{asset('import/assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle"/>
-                                    
-                                    @else
-                                        <img src="{{ asset('images/'. auth()->user()->image_path) }}" alt="..." class="avatar-img rounded-circle"/>
-                                    @endif -->
-                                <!-- <img
-                                    src="{{ asset('images/'. auth()->user()->image_path) }}"
-                                    alt="image profile"
-                                    class="avatar-img rounded"
-                                /> -->
-                                </div>
-                                <!-- <div class="u-text">
-                                <h4>{{ auth()->user()->name }}</h4>
-                                <p class="text-muted">{{ auth()->user()->email }}</p>
-                                <a href="/profile/{{auth()->user()->id}}" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                </div> -->
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/profile/{{auth()->user()->id}}">My Profile</a>
                             <div class="dropdown-divider"></div>
                             <form action="{{ route('logout') }}" method="post">
