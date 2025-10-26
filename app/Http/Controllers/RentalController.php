@@ -11,15 +11,35 @@ class RentalController extends Controller
 {
     //
     public function index(){
+        // Auto update setiap kali page dibuka
+        Rental::whereDate('rental_date', '<=', now())
+            ->whereDate('return_date', '>', now())
+            ->whereNotIn('status', [0, 3, 4]) // 0=Pending, 3=Completed, 4=Cancelled
+            ->update(['status' => 2]);
+
+        Rental::whereDate('return_date', '<', now())
+            ->whereNotIn('status', [0, 4])  // exclude Pending & Cancelled
+            ->update(['status' => 3]);
+
         $rentals = Rental::with(['car','user'])->get();
 
         return view('pages.admin.rental', compact('rentals'));
     }
 
     public function myOrder($id){
-            $rentals = Rental::with(['car', 'user'])
-                     ->where('user_id', $id)->latest() 
-                     ->get();
+        // Auto update setiap kali page dibuka
+        Rental::whereDate('rental_date', '<=', now())
+            ->whereDate('return_date', '>', now())
+            ->whereNotIn('status', [0, 3, 4]) // 0=Pending, 3=Completed, 4=Cancelled
+            ->update(['status' => 2]);
+
+        Rental::whereDate('return_date', '<', now())
+            ->whereNotIn('status', [0, 4])  // exclude Pending & Cancelled
+            ->update(['status' => 3]);
+
+        $rentals = Rental::with(['car', 'user'])
+                    ->where('user_id', $id)->latest() 
+                    ->get();
 
         return view('pages.customer.order', compact('rentals'));
     }
