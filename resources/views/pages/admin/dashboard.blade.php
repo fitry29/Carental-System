@@ -102,8 +102,8 @@
                       </div>
                       <div class="col-7 col-stats">
                         <div class="numbers">
-                          <p class="card-category">User Point</p>
-                          <h4 class="card-title">150GB</h4>
+                          <p class="card-category">Active Rental</p>
+                          <h4 class="card-title">{{ $activeRentals }}</h4>
                         </div>
                       </div>
                     </div>
@@ -140,8 +140,8 @@
                       </div>
                       <div class="col-7 col-stats">
                         <div class="numbers">
-                          <p class="card-category">Errors</p>
-                          <h4 class="card-title">23</h4>
+                          <p class="card-category">Cancels</p>
+                          <h4 class="card-title">{{ $cancelRentals }}</h4>
                         </div>
                       </div>
                     </div>
