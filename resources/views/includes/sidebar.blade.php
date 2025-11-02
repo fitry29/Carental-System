@@ -2,7 +2,7 @@
 <div class="sidebar" data-background-color="white">
     <div class="sidebar-logo">
         <!-- Logo Header -->
-        <div class="logo-header" data-background-color="blue">
+        <div class="logo-header" data-background-color="dark">
             <a href="index.html" class="logo">
               <img
                 src="{{ asset('images/carental-logo.png') }}"
