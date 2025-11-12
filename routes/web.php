@@ -32,16 +32,9 @@ use App\Models\Maintenance;
 
     // Route::post('/booking', [RentalController::class, 'searchAvailableCars'])->name('customer.booking');
 
-    Route::middleware(['auth'])->group(function(){
-
-        //Dashboard
-        // Route::get('/admin', function () {
-        //     return view('pages.admin.dashboard');
-        // })->name('dashboard');
-
+    Route::middleware(['auth', 'role:admin', 'role:staff'])->group(function () {
         Route::get('/admin',[DashboardController::class, 'dashboardIndex'])->name('dashboard');
 
-        //For User
         Route::get('/user',[UserController::class, 'index'])->name('users.index'); //Go to list category
         Route::get('/user/create',[UserController::class, 'create'])->name('users.register'); //Go to create category form
         Route::post('/user',[UserController::class, 'store'])->name('users.store'); //Save registered form
@@ -69,6 +62,17 @@ use App\Models\Maintenance;
         Route::get('/edit-maintenance/{id}',[MaintenanceController::class, 'editMaintenancePage'])->name('maintenances.edit');
         Route::post('/save-edit-maintenance/{id}',[MaintenanceController::class, 'modifyMaintenance'])->name('maintenances.save-edit');
         Route::get('/delete-maintenance/{id}',[MaintenanceController::class, 'deleteMaintenance'])->name('maintenances.destroy');
+        // semua route admin kat sini
+    });
+
+
+    Route::middleware(['auth', 'role:customer'])->group(function(){
+
+        //Dashboard
+        // Route::get('/admin', function () {
+        //     return view('pages.admin.dashboard');
+        // })->name('dashboard');
+        //For User
 
         Route::get('/booking',[RentalController::class, 'index'])->name('bookings.index');
         Route::get('/rental/create', [RentalController::class, 'searchAvailableCars'])->name('rentals.search-available-car');

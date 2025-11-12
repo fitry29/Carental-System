@@ -28,6 +28,14 @@ This project is suitable for learning **Laravel CRUD, Authentication, and Admin 
 
 ---
 
+## 🖼️ Screenshots
+### Customer Page
+![homepage](home.png)
+![Booking Page](booking-page.png)
+![Order Page](order-page.png)
+
+---
+
 ## 👨‍💻 Default Admin Account
 
 - Email: admin@system.com
